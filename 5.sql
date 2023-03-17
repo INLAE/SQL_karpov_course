@@ -1,8 +1,9 @@
 /* отменённые заказы */
 with cancels as (SELECT order_id
                                         FROM   user_actions
-                                        WHERE  action = 'cancel_order'),diff as (
-/* заказы с разницей во времени */
+                                        WHERE  action = 'cancel_order'),
+/* заказы с разницей во времени */      
+      diff as (
 SELECT user_id,
        order_id,
        time,
